@@ -56,9 +56,10 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    @cart = Cart.find(session[:cart_id])
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url, notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to cart_path(@cart), notice: 'Item successfully removed!' }
       format.json { head :no_content }
     end
   end
@@ -71,6 +72,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:instrument_id, :cart_id)
+      params.require(:line_item).permit(:instrument_id)
     end
 end
