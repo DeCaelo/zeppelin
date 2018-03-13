@@ -7,5 +7,5 @@ $(document).ready(() => {
     $('#notice_wrapper').fadeOut('slow', () => {
       $(this).remove();
     });
-  }, 2000);
+  }, 4000);
 });

@@ -13,21 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import 'bulma';
 
-#notice_wrapper {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background: rgba(239, 243, 31, 0.85);
-  p {
-    padding: 2.5rem 0;
-    text-align: center;
-    margin: 0;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: black;
-    letter-spacing: 1px;
-  }
-}
+@import 'bulma';
+@import 'alert';
+@import 'functions';
+@import 'variables';
